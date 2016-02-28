@@ -1,0 +1,24 @@
+---
+title: Admin
+---
+
+<p>Built on {{ site.time }}</p>
+
+<h2>Pages</h2>
+
+<ul>
+{% for p in site.pages %}
+  <li>{{ p.title }} - {{ p.url }}</li>
+{% endfor %}
+</ul>
+
+<h2>Posts</h2>
+
+<ul>
+{% for p in site.posts %}
+  <li>{{ p.title }} - {{ p.url }}</li>
+{% endfor %}
+</ul>
+
+<h2>Data</h2>
+{{ site.data }}
