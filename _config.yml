@@ -14,3 +14,6 @@ github_username:  lucafaggianelli
 # Build settings
 markdown: kramdown
 exclude: [admin]
+
+# Posts permalink style
+permalink: '/:title.html'
