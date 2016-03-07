@@ -20,7 +20,12 @@
     letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
+    border: none;
 
+    &:hover {
+      border: none;
+    }
+    
     &,
     &:visited {
         color: $grey-color-dark;
@@ -99,6 +104,10 @@
   float: right;
   max-height: 100px;
   opacity: .4;
+
+  img {
+    max-height: 200px;
+  }
 }
 
 
