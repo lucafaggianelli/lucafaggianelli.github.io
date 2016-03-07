@@ -84,6 +84,8 @@ li {
 h1, h2, h3, h4, h5, h6 {
     font-weight: $base-font-weight;
     font-family: $hs-font-family;
+    line-height: 1.2em;
+    margin-bottom: .5em;
 }
 
 h1 {
@@ -102,7 +104,7 @@ a {
     color: lighten($brand-color, 35%);
     border-bottom: 1px solid lighten($brand-color, 55%);
     text-decoration: none;
-    padding-bottom: 1px;
+    padding-bottom: 2px;
 
     &:visited {
     }
