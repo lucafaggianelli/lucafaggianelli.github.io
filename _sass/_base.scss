@@ -86,6 +86,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $hs-font-family;
     line-height: 1.2em;
     margin-bottom: .5em;
+
+    a {
+        padding-bottom: 2px;
+    }
 }
 
 h1 {
@@ -102,9 +106,9 @@ h2 {
  */
 a {
     color: $brand-color;
-    border-bottom: 1px solid lighten($brand-color, 55%);
+    border-bottom: 1px solid $grey-color-light;
     text-decoration: none;
-    padding-bottom: 2px;
+    padding-bottom: 1px;
     @include transition(border-color .3s ease);
 
     &:visited {
@@ -123,7 +127,7 @@ a {
  */
 blockquote {
     color: $grey-color;
-    border-left: 4px solid $grey-color-light;
+    border-left: 4px solid #938172;
     padding-left: $spacing-unit / 2;
     font-size: 18px;
     letter-spacing: -1px;
