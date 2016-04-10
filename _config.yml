@@ -1,10 +1,12 @@
 # Site settings
-title: LuBlog
-email: your-email@domain.com
+title: Luca Faggianelli
+email: luca.faggianelli@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
     My blog
+
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://lucafaggianelli.github.io"
+img_url: "/images"
 
 twitter_username: lucafaggianelli
 github_username:  lucafaggianelli

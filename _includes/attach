@@ -1,0 +1,3 @@
+<a class="attach"
+  href="{{ site.url }}/uploads/{{ include.filename }}">
+{{ include.name | default: include.filename }}<a>

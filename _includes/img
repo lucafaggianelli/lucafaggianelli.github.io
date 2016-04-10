@@ -1,0 +1,6 @@
+<figure
+  class="figure image-align-{{ include.align | default: 'center' }}">
+  <img src="{{ site.img_url }}/{{ include.src }}"
+    title="{{ include.title }}"/>
+  <figcaption>{{ include.title }}</figcaption>
+</figure>

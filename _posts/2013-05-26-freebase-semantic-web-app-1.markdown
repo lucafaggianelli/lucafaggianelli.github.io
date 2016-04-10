@@ -27,10 +27,10 @@ Now let’s look what Freebase knows, well type something in the input below and
 I say something, I mean anything from Eggplant to F12berlinetta!
 A list will appear and if you hover an item you will get a short description:
 
-<input class=”fb-suggest” />
+<input class="fb-suggest" />
 <script>(function($) {
 
-var css = jQuery(“<link>”);
+var css = jQuery("<link>");
 css.attr({rel: “stylesheet”,type: “text/css”,href: “https://www.gstatic.com/freebase/suggest/4_0/suggest.min.css”});
 $(“head”).append(css);
 $.getScript(“https://www.gstatic.com/freebase/suggest/3_1/suggest.min.js”,function() {$(“.fb-suggest”).suggest();});
