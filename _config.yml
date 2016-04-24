@@ -18,3 +18,5 @@ exclude: [admin]
 
 # Posts permalink style
 permalink: '/:title.html'
+
+analytics_tracking_id: 'UA-76822752-1'
