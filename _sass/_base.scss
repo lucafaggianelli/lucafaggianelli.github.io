@@ -84,25 +84,24 @@ li {
 h1, h2, h3, h4, h5, h6 {
     font-weight: $base-font-weight;
     font-family: $hs-font-family;
-    line-height: 1.2em;
     margin-bottom: .5em;
-
-    a {
-        padding-bottom: 2px;
-    }
 }
 
 h1 {
   font-size: 2.5em;
+  line-height: 1.6em;
 }
 h2 {
   font-size: 2em;
+  line-height: 1.4em;
 }
 h3 {
   font-size: 1.7em;
+  line-height: 1.2em;
 }
 h4 {
   font-size: 1.5em;
+  line-height: 1.2em;
 }
 
 
@@ -133,8 +132,10 @@ a {
  */
 blockquote {
     color: lighten($text-color, 10%);
-    border-left: 4px solid #938172;
+    border-left: 4px solid $grey-color;
     padding-left: $spacing-unit / 2;
+    padding-top: 10px;
+    padding-bottom: 10px;
 
     > :last-child {
         margin-bottom: 0;
@@ -151,7 +152,7 @@ code {
     font-size: 15px;
     border: 1px solid $grey-color-light;
     border-radius: 3px;
-    background-color: #eef;
+    background-color: $grey-color-light;
 }
 
 code {
