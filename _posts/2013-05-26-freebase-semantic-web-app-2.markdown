@@ -2,6 +2,7 @@
 layout: post
 title:  "Freebase: building a Semantic Web app - Part II"
 date:   2013-05-30
+post-collection: freebaseapp
 tags: freebase google semantic-web
 ---
 

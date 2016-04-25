@@ -2,8 +2,8 @@
 layout: post
 title:  "Freebase: building a Semantic Web app - Part I"
 date:   2013-05-26
-multipart: true
-categories: freebase google semantic-web
+post-collection: freebaseapp
+tags: freebase google semantic-web
 ---
 
 Freebase is an open, Creative Commons licensed graph database with more than 23 million entities.

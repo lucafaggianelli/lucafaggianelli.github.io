@@ -2,6 +2,7 @@
 layout: post
 title:  "Control RGB LEDs via BlueTooth and Android - Part I (Hardware)"
 date:   2013-08-03
+post-collection: rgb-android-led
 categories: electronics android pic18 bluetooth 
 ---
 

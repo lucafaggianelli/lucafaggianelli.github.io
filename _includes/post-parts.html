@@ -1,0 +1,12 @@
+<div class="post-parts">
+  <h3>This post is part of a collection</h3>
+  
+  <ul>
+  {% for part in site.posts reversed %}
+  {% if part.post-collection == page.post-collection %}
+    <li class="{% if part.id == page.id %}current{% endif %}">
+      <a href="{{ part.url }}">{{ part.title }}</a></li>
+  {% endif %}
+  {% endfor %}
+  </ul>
+</div>
