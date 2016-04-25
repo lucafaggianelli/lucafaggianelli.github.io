@@ -1,0 +1,15 @@
+{% if site.github_username %}
+  {% include icon-github.html username=site.github_username %}
+{% endif %}
+
+{% if site.twitter_username %}
+  {% include icon-twitter.html username=site.twitter_username %}
+{% endif %}
+
+{% if site.linkedin_username %}
+  <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
+    <i class="fa fa-linkedin-square fa-fw" style="color:#1481BA;"></i></a>
+{% endif %}
+  
+<a href="{{ "/feed.xml" | prepend: site.baseurl }}">
+  <i class="fa fa-rss fa-fw" style="color:#FAA21B;"></i></a>

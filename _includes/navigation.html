@@ -1,0 +1,15 @@
+<header class="site-header">
+  <div class="wrapper pure-g">
+
+    <a class="site-title pure-u-1 pure-u-md-1-2" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    
+    <nav class="site-nav pure-u-1 pure-u-md-1-2">
+        {% for my_page in site.pages %}
+          {% if my_page.title %}
+          <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+          {% endif %}
+        {% endfor %}
+    </nav>
+
+  </div>
+</header>

@@ -16,7 +16,7 @@ $hs-font-family:   'PT Serif', Arial, sans-serif;
 
 $spacing-unit:     30px;
 
-$text-color:       #303030;
+$text-color:       #505050;
 $background-color: #e1e3e4;
 $brand-color:      #3fb0ac;
 
@@ -25,26 +25,16 @@ $grey-color-light: darken($background-color, 10%);
 
 // Width of the content area
 $content-width:    800px;
+// Height of nav menu
+$nav-height:       56px;
 
-$on-palm:          600px;
-$on-laptop:        800px;
+$small-screen:     768px;
 
-
-
-// Use media queries like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
+@mixin on-small-screen() {
+    @media screen and (max-width: $small-screen) {
         @content;
     }
 }
-
-
 
 @mixin transition($args...) {
   -webkit-transition: $args;

@@ -110,18 +110,19 @@ h4 {
  * Links
  */
 a {
-    color: $brand-color;
-    border-bottom: 1px solid $grey-color-light;
+    color: $text-color;
+    border-bottom: 2px solid $brand-color;
     text-decoration: none;
     padding-bottom: 1px;
     @include transition(border-color .3s ease);
+    @include transition(color .3s ease);
 
     &:visited {
     }
 
     &:hover {
         color: $brand-color;
-        border-bottom: 1px solid $brand-color;
+        border-color: $grey-color-light;
     }
 }
 
@@ -177,19 +178,17 @@ pre {
  * Wrapper
  */
 .wrapper {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width: $content-width - $spacing-unit;
     margin-right: auto;
     margin-left: auto;
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
+    padding-right: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
     @extend %clearfix;
 
-    @include media-query($on-laptop) {
-        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-        padding-right: $spacing-unit / 2;
-        padding-left: $spacing-unit / 2;
+    @include on-small-screen() {
+        max-width: $content-width - ($spacing-unit * 2);
+        padding-right: $spacing-unit;
+        padding-left: $spacing-unit;
     }
 }
 
@@ -220,8 +219,4 @@ pre {
         height: 16px;
         vertical-align: middle;
     }
-}
-
-.social-media-list .fa {
-  min-width: 1em;
 }
