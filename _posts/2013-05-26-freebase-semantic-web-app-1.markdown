@@ -30,10 +30,6 @@ A list will appear and if you hover an item you will get a short description:
 {% include script
     src="https://www.gstatic.com/freebase/suggest/4_1/suggest.min.js" %}
 
-{% javascript %}
-  $(".fb-suggest").suggest();
-{% endjavascript %}
-
 What you just used is an autocomplete widget
 ([Freebase suggest](http://wiki.freebase.com/wiki/Freebase_Suggest) is the official name)
 to explore the fantastic world of Freebase.
