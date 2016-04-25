@@ -1,0 +1,4 @@
+<link
+    rel="{{ include.rel | default: 'stylesheet' }}"
+    type="{{ include.type | default: 'text/css' }}"
+    href="{{ include.href | default: ''}}" />

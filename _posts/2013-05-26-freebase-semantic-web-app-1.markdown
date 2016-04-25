@@ -2,6 +2,7 @@
 layout: post
 title:  "Freebase: building a Semantic Web app - Part I"
 date:   2013-05-26
+multipart: true
 categories: freebase google semantic-web
 ---
 
@@ -9,14 +10,9 @@ Freebase is an open, Creative Commons licensed graph database with more than 23 
 It powers the new Google Semantic search. In this post I’ll briefly describe how it works and 
 I’ll give you some hints for building your own semantic web app using Freebase power!
 
-Ask google for the height of tower of pisa!
-
-<script type=”text/javascript” src=”http://tesladocet.com/js/raphael-min.js”></script>
-<script type=”text/javascript” src=”http://tesladocet.com/js/dracula_graffle.js”></script>
-<script type=”text/javascript” src=”http://tesladocet.com/js/dracula_graph.js”></script>
-
 # Introduction
-![Search result for 'The Godfather' in google]({{ site.url }}/images/freebase-godfather.png)
+{% include img align='right'
+    src='freebase-godfather.png' %}
 
 Freebase ([What is Freebase?](http://wiki.freebase.com/wiki/What_is_Freebase%3F))
 has been founded by Metaweb, now acquired by Google and it powers Google semantic
@@ -28,13 +24,15 @@ I say something, I mean anything from Eggplant to F12berlinetta!
 A list will appear and if you hover an item you will get a short description:
 
 <input class="fb-suggest" />
-<script>(function($) {
 
-var css = jQuery("<link>");
-css.attr({rel: “stylesheet”,type: “text/css”,href: “https://www.gstatic.com/freebase/suggest/4_0/suggest.min.css”});
-$(“head”).append(css);
-$.getScript(“https://www.gstatic.com/freebase/suggest/3_1/suggest.min.js”,function() {$(“.fb-suggest”).suggest();});
-})( jQuery );</script>
+{% include link
+    href="https://www.gstatic.com/freebase/suggest/4_1/suggest.min.css" %}
+{% include script
+    src="https://www.gstatic.com/freebase/suggest/4_1/suggest.min.js" %}
+
+{% javascript %}
+  $(".fb-suggest").suggest();
+{% endjavascript %}
 
 What you just used is an autocomplete widget
 ([Freebase suggest](http://wiki.freebase.com/wiki/Freebase_Suggest) is the official name)

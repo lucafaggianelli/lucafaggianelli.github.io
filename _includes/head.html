@@ -10,6 +10,8 @@
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
 
+<script src="{{ site.url }}/js/jquery-1.12.3.min.js"></script>
+
 {% unless site.debug %}
 {% include google-analytics.html tracking_id=site.analytics_tracking_id %}
 {% endunless %}
