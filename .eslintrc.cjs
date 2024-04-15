@@ -18,6 +18,13 @@ module.exports = {
 	ignorePatterns: ["node_modules", "dist"],
 	overrides: [
 		{
+			rules: {
+				"perfectionist/sort-objects": [
+          "off"
+        ],
+			},
+		},
+		{
 			extends: ["plugin:@typescript-eslint/strict", "plugin:@typescript-eslint/stylistic"],
 			files: ["*.astro"],
 			parser: "astro-eslint-parser",
