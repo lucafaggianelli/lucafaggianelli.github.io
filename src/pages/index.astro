@@ -1,8 +1,11 @@
 ---
+import { Image } from "astro:assets";
+
 import SocialList from "@/components/SocialList.astro";
 import PostPreview from "@/components/blog/PostPreview.astro";
 import PageLayout from "@/layouts/Base.astro";
 import { getAllPosts, sortMDByDate } from "@/data/post";
+import profilePicture from "@/assets/profile.jpeg";
 
 const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
@@ -53,17 +56,31 @@ const cactusTech: { desc: string; href: string; title: string }[] = [
 ---
 
 <PageLayout meta={{ title: "Home" }}>
-	<section>
-		<h1 class="title mb-6">Hello World!</h1>
-		<p class="mb-4">
-			Hi, I’m a theme for Astro, an example of how you can use this starter to create a personal
-			blog. If you want to know more about how you can customise me, add more posts, and make it
-			your own, click on the github icon link below and it will take you to my repo.
-		</p>
-		<SocialList />
+	<section class="flex flex-col items-end gap-16 md:flex-row">
+		<div>
+			<h1 class="title mb-6">Hello World!</h1>
+			<p class="mb-4">
+				Hi, I’m a theme for Astro, an example of how you can use this starter to create a personal
+				blog. If you want to know more about how you can customise me, add more posts, and make it
+				your own, click on the github icon link below and it will take you to my repo.
+			</p>
+			<SocialList />
+		</div>
+
+		<div
+			class="h-60 w-full flex-shrink-0 overflow-hidden rounded-xl grayscale-[60%] sm:w-48 md:mb-36"
+		>
+			<Image
+				alt="Profile picture"
+				class="h-full w-full object-cover"
+				fetchpriority="high"
+				loading="eager"
+				src={profilePicture}
+			/>
+		</div>
 	</section>
 	<section aria-label="Blog post list" class="mt-16">
-		<h2 class="title mb-4 text-xl">Posts</h2>
+		<h2 class="title mb-4 text-xl">Latests posts</h2>
 		<ul class="space-y-4">
 			{
 				allPostsByDate.map((p) => (
