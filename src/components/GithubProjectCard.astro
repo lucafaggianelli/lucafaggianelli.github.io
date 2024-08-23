@@ -1,0 +1,28 @@
+---
+interface Props {
+	name: string;
+	description: string;
+	stars: number;
+	url: string;
+	homepage: string;
+	image: string;
+}
+
+const { name, description, url, homepage, image } = Astro.props;
+---
+
+<article>
+	<a
+		href={homepage || url}
+		class="flex flex-col md:flex-row overflow-hidden rounded-xl border border-zinc-400"
+		target="_blank"
+		referrerpolicy="no-referrer"
+	>
+		<div class="flex-grow p-8">
+			<div class="mb-1 text-lg text-accent-2">{name}</div>
+			<div>{description}</div>
+		</div>
+
+		<img alt={name} src={image} class="block h-auto md:h-48 w-full md:w-96 flex-shrink-0 object-cover" />
+	</a>
+</article>

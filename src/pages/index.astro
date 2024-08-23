@@ -5,11 +5,18 @@ import SocialList from "@/components/SocialList.astro";
 import PostPreview from "@/components/blog/PostPreview.astro";
 import PageLayout from "@/layouts/Base.astro";
 import { getAllPosts, sortMDByDate } from "@/data/post";
+import { getGithubProject } from "@/data/github";
 import profilePicture from "@/assets/profile.jpeg";
+import GithubProjectCard from "@/components/GithubProjectCard.astro";
 
 const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
+const projects = await Promise.all(
+	["lucafaggianelli/plombery", "lucafaggianelli/squiggle", "lucafaggianelli/stepper-hook"].map(
+		getGithubProject
+	)
+);
 ---
 
 <PageLayout meta={{ title: "Home" }}>
@@ -17,8 +24,9 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 		<div class="flex-grow">
 			<h1 class="title mb-6">Hey there, I'm Luca!</h1>
 			<p class="mb-4">
-				I run <a href="https://velvetlab.tech" class="cactus-link">VelvetLab</a>, an IT consulting company and I'm CTO
-				at <a href="https://fourgreen.it" class="cactus-link">Fourgreen</a>, a carbon footprint startup.
+				I run <a href="https://velvetlab.tech" class="cactus-link">VelvetLab</a>, an IT consulting
+				company and I'm CTO at <a href="https://fourgreen.it" class="cactus-link">Fourgreen</a>, a
+				carbon footprint startup.
 			</p>
 			<SocialList />
 		</div>
@@ -34,16 +42,32 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 		</div>
 	</section>
 
-	<section aria-label="Blog post list" class="mt-16">
-		<h2 class="title mb-4 text-xl">Latests posts</h2>
-		<ul class="space-y-4">
-			{
-				allPostsByDate.map((p) => (
-					<li class="flex flex-col gap-x-2 sm:flex-row">
-						<PostPreview post={p} />
-					</li>
-				))
-			}
-		</ul>
-	</section>
+	{
+		allPostsByDate.length > 0 && (
+			<section aria-label="Blog post list" class="mt-16">
+				<h2 class="title mb-4 text-xl">Latests posts</h2>
+				<ul class="space-y-4">
+					{allPostsByDate.map((p) => (
+						<li class="flex flex-col gap-x-2 sm:flex-row">
+							<PostPreview post={p} />
+						</li>
+					))}
+				</ul>
+			</section>
+		)
+	}
+
+	{
+		projects.length > 0 && (
+			<section aria-label="Projects" class="mt-16">
+				<h2 class="title mb-4 text-xl">Recent projects</h2>
+
+				<ul class="space-y-4">
+					{projects.map((p) => (
+						<GithubProjectCard {...p} />
+					))}
+				</ul>
+			</section>
+		)
+	}
 </PageLayout>
